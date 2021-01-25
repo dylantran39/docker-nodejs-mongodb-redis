@@ -19,8 +19,8 @@ services:
       - "${PORT}:${PORT}"
     restart: unless-stopped
     depends_on:
-        - redis
-        - db
+      - redis
+      - db
     networks:
       - db-network
       - cache-network
@@ -29,7 +29,7 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
-  
+
   db:
     image: mongo
     volumes:
@@ -50,7 +50,7 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
-  
+
   redis:
     image: redis:5-alpine
     volumes:
@@ -60,7 +60,7 @@ services:
     networks:
       - cache-network
     healthcheck:
-      test: ["CMD", "redis-cli","ping"]
+      test: ["CMD", "redis-cli", "ping"]
       interval: 30s
       timeout: 10s
       retries: 5
