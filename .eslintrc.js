@@ -1,19 +1,21 @@
 module.exports = {
   env: {
-    commonjs: true,
-    es6: true,
-    node: true
+    commonjs: "true",
+    es6: "true",
+    node: "true"
   },
-  extends: [
-    'standard'
-  ],
+  extends: ["standard"],
   globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly"
   },
+  parser: "babel-eslint",
   parserOptions: {
-    ecmaVersion: 2018
+    ecmaVersion: 6,
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true
+    }
   },
-  rules: {
-  }
-}
+  rules: {}
+};

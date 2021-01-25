@@ -9,7 +9,10 @@ class ProductController {
         })
       }
 
-      if (!req.body.product_quantity || !req.body.product_quantity.trim().length) {
+      if (
+        !req.body.product_quantity ||
+        !req.body.product_quantity.trim().length
+      ) {
         return res.status(422).json({
           message: 'Product quantity is required!'
         })
